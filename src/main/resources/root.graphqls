@@ -1,0 +1,20 @@
+# 查询相关接口
+type Query {
+    # 通过id获取用户信息, 方法参数，Int(I大写) 表示是一个int类型，"!"表示非空
+    # user(id: Int!): User
+    # 用户信息列表, 表示是一个列表
+    # users: [User]
+    # order(id: Int!): Order
+    
+    findUserById(id:Long!): User
+}
+
+# 变更相关接口
+type Mutation {
+   # 添加用户信息
+    saveUser(user: addUserInput!): Boolean
+   # 删除用户信息
+    deleteUser(id: Int!): Boolean
+   # 更新用户信息
+    updateUser(user: updateUserInput!): Boolean
+}

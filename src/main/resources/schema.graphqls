@@ -1,0 +1,42 @@
+# 用户信息对象
+type User {
+    # 编号
+    id: Int!
+    # 用户名
+    userName: String!
+    # 密码
+    password: String!
+    # 年龄
+    age: Int
+    orders: [Order]
+}
+
+type Product {
+    id: Int!
+    title: String!
+    desc: String
+    price: Float!
+}
+
+type Order {
+    id: Int!
+    price: Float!
+    userId: Int!
+    products: [Product]
+}
+
+# 添加用户信息输入参数
+input addUserInput {
+    id: Int!
+    userName: String!
+    password: String!
+    age: Int
+}
+
+# 更新用户信息输入参数
+input updateUserInput {
+    id: Int!
+    userName: String!
+    password: String!
+    age: Int
+}
